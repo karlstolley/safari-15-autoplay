@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Local Video Stream Autoplay Bug in Safari 15</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <video id="self" autoplay muted playsinline poster="poster.png"></video>
+  <pre>No video or frozen video.</pre>
+
+<script>
+  'use strict';
+
+  const constraints = {
+    audio: false, // AUDIO SET TO FALSE
+    video: true
+  };
+
+  navigator.mediaDevices
+    .getUserMedia(constraints)
+    .then(function(stream) {
+      const video = document.querySelector('#self');
+      video.srcObject = stream;
+    });
+</script>
+</body>
+</html>

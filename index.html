@@ -8,12 +8,12 @@
 
 <h2>The Bug</h2>
 <p>
-  When macOS Safari 15 or 15.1 requests and receives permission to access only the camera (no
-  audio/microphone; <code>{ audio: false, video: true }</code> as media constraints), and when a
-  <code>poster</code> attribute is used on the <code>&lt;video&gt;</code> element for displaying the
-  resulting video stream, the video typically does not display at all. And if it does display, it
-  remains frozen on the first frame, despite the inclusion of both the <code>muted</code> and
-  <code>autoplay</code> attributes on the <code>&lt;video&gt;</code> element.
+  When macOS Safari 15 (thru at least 15.2) requests and receives permission to access only the
+  camera (no audio/microphone; <code>{ audio: false, video: true }</code> as media constraints), and
+  when a <code>poster</code> attribute is used on the <code>&lt;video&gt;</code> element for
+  displaying the resulting video stream, the video typically does not display at all. And if it does
+  display, it remains frozen on the first frame, despite the inclusion of both the
+  <code>muted</code> and <code>autoplay</code> attributes on the <code>&lt;video&gt;</code> element.
 </p>
 <p>
   By navigating away from the browser window (e.g., by switching to another virtual desktop screen)
@@ -30,7 +30,8 @@
   </li>
 </ol>
 <p>
-  the resulting video stream displays and autoplays as expected. Examples and source code below.
+  the resulting video stream displays and autoplays in Safari 15 as expected. Links to examples and
+  source code below.
 </p>
 
 <h2>The Examples</h2>
@@ -38,19 +39,19 @@
   <li>
     Video with <code>audio: false</code> in media constraints and the <code>poster</code> attribute:
     <a href="audio-false/">live example</a>, <a href="https://github.com/karlstolley/safari-15-autoplay/blob/main/audio-false/index.html">source code</a>.
-    <b>Result:</b> frozen video or no video at all in macOS Safari 15 and Safari 15.1.
+    <b>Result:</b> frozen video or no video at all in macOS Safari 15.
   </li>
   <li>
     Video with <code>audio: false</code> in media constraints but <b>without</b> the
     <code>poster</code> attribute:
     <a href="audio-false-no-poster/">live example</a>, <a href="https://github.com/karlstolley/safari-15-autoplay/blob/main/audio-false-no-poster/index.html">source code</a>.
-    <b>Result:</b> autoplaying video in macOS Safari 15 and Safari 15.1.
+    <b>Result:</b> autoplaying video in macOS Safari 15.
   </li>
   <li>
     Video with <code>audio: true</code> in media constraints <b>and</b> the <code>poster</code>
     attribute:
     <a href="audio-true/">live example</a>, <a href="https://github.com/karlstolley/safari-15-autoplay/blob/main/audio-true/index.html">source code</a>.
-    <b>Result:</b> autoplaying video in macOS Safari 15 and Safari 15.1.
+    <b>Result:</b> autoplaying video in macOS Safari 15.
   </li>
 </ul>
 </body>
